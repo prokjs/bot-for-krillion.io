@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Cuts settings</title>
+  <style>
+    body { color-scheme: dark; background: #101c2b; color: #edf4ff; font: 16px/1.6 system-ui; max-width: 640px; margin: 48px auto; padding: 20px; }
+    label { display: block; margin: 20px 0; } input { display: block; width: 100%; box-sizing: border-box; padding: 10px; font: inherit; }
+    button { padding: 10px 18px; font: inherit; cursor: pointer; } a { color: #7ce5e4; }
+  </style>
+</head>
+<body>
+  <h1>Krillion Deep Cuts</h1>
+  <p>Uses your OpenAI API account. API usage is billed separately from ChatGPT subscriptions.</p>
+  <form id="settings">
+    <label>OpenAI API key <input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="Leave blank to keep the saved key"></label>
+    <label>Model <input id="model" required value="gpt-4.1-mini" spellcheck="false"></label>
+    <p>Default: gpt-4.1-mini for speed. Choose an available model supporting the Responses API and structured outputs. Slower models may exceed the game's 25-second rounds.</p>
+    <button type="submit">Save settings</button> <button id="remove" type="button">Delete saved key</button>
+  </form>
+  <p id="status" role="status" aria-live="polite"></p>
+  <p>Your key is stored locally in this browser profile, not encrypted and not synced. Only the extension's trusted pages can read it. Visible question text is sent to OpenAI when you request suggestions or enable automatic suggestions. No screenshots, cookies, or game credentials are sent.</p>
+  <p>Suggestions are factual estimates, not access to Krillion's accepted-answer database. Both acceptance and rarity remain unverified.</p>
+  <p><a href="https://platform.openai.com/api-keys" target="_blank" rel="noreferrer">Create an OpenAI API key</a></p>
+  <script src="options.js"></script>
+</body>
+</html>
